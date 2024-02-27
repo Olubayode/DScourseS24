@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\title{PS5\_Olubayode}
+\author{Olubayode Ebenezer}
+\date{Date of Submission}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In this project, I explored two distinct approaches to data collection and processing using R programming, focusing on web scraping and API data retrieval. These methodologies allowed me to extract and utilize data for creating educational content and for personal use in adapting to new environments.
+
+\section{Task 1: Quiz Generation and Distribution}
+
+\subsection{Project Description}
+
+The first task involved collecting data from a webpage without an API, specifically the Wikipedia page listing the capitals of Nigerian states. Using the \texttt{rvest} package, I extracted the relevant data and transformed it into a structured dataframe. This data served as the foundation for generating a series of geography quizzes, aimed at testing knowledge of Nigerian state capitals.
+
+\subsection{Methodology}
+
+The project employed several R packages for data manipulation and quiz generation, notably \texttt{rvest}, \texttt{dplyr}, and \texttt{officer}. The process included:
+
+\begin{itemize}
+    \item Identifying and extracting the table of states and their capitals using CSS selectors.
+    \item Parsing the HTML content to a dataframe for easy manipulation.
+    \item Randomly generating quiz questions and multiple-choice answers, including distractors.
+    \item Creating personalized quizzes and answer keys in Word documents using the \texttt{officer} package.
+    \item Automating the distribution of these quizzes to students via email.
+\end{itemize}
+
+\subsection{Future Applications}
+
+This approach has broader applications in educational technology, offering a scalable method to generate and distribute personalized learning materials across various subjects. The methodology emphasizes the potential for enhancing learning experiences through tailored content delivery.
+
+\section{Task 2: Real-Time Weather Data Retrieval}
+
+\subsection{Project Description}
+
+For the second task, I focused on real-time data retrieval using an API to monitor weather conditions in Norman, Oklahoma. This project was particularly relevant to me as a student adapting to a new environment in the United States.
+
+\subsection{Methodology}
+
+Utilizing the \texttt{httr} and \texttt{jsonlite} packages, I developed a function to fetch and display real-time weather data from the OpenWeather API. The script was designed to update every minute, providing a continuous stream of weather information, including temperature, humidity, and wind speed.
+
+\subsection{Applications and Observations}
+
+This real-time data retrieval system has practical applications for personal use, especially for individuals in new or varying climates. The ability to monitor weather conditions closely aids in planning daily activities and adapting to new environments. The project highlighted the efficiency of using APIs for real-time data access and the importance of automated data retrieval in personal and professional contexts.
+
+\section{Conclusion}
+
+Both tasks demonstrated the power of R programming in data collection, processing, and application. Whether for educational content creation or for adapting to new environmental conditions, the skills and methodologies developed in this project have broad applications and potential for future expansion.
+
+\end{document}
