@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{booktabs} % For formal tables
+
+\begin{document}
+
+\title{Model Performance and Parameters}
+\author{EBENEZER OLUBAYODE}
+\date{\today}
+\maketitle
+
+\section*{Model Performance}
+\begin{tabular}{lc}
+\toprule
+Model Type & Accuracy \\
+\midrule
+SVM & 0.865 \\
+Logistic Regression & 0.846 \\
+Decision Tree & 0.868 \\
+Neural Network & 0.837 \\
+k-Nearest Neighbors & 0.844 \\
+\bottomrule
+\end{tabular}
+
+\section*{Best Parameters For Each Model}
+\begin{tabular}{lccccc}
+\toprule
+Parameter & SVM & Logistic Regression & Decision Tree & Neural Network & k-NN\\
+\midrule
+Cost & 1 $(2^0)$ & NA & NA & NA & NA \\
+rbf\_sigma & 0.25   $(2^{-2})$ & NA & NA & NA & NA \\
+Penalty & NA & 0.000339 & NA & 0.00000278 & NA \\
+cost\_complexity & NA & NA & 0.001 & NA & NA \\
+tree\_depth & NA & NA & 15 & NA & NA \\
+min\_n & NA & NA & 10 & NA & NA \\
+hidden\_units & NA & NA & NA & 6 & NA \\
+neighbors & NA & NA & NA & NA & 26 \\
+\bottomrule
+\end{tabular}
+
+\section*{Performance Analysis}
+\textbf{Decision Tree} exhibits the highest accuracy at 0.868. This suggests that for the given dataset and task, the Decision Tree model might capture the patterns most effectively, especially given its ability to model non-linear relationships and interactions between features.
+
+\textbf{SVM (Support Vector Machine)} is a close second with an accuracy of 0.865. This model, which maximizes the margin between classes, is also performing quite well, indicating its robustness in handling high-dimensional data or data where classes are not easily separable by a simple hyperplane.
+
+\textbf{Logistic Regression} shows an accuracy of 0.846. As a linear model, it might be slightly less capable of capturing complex patterns as effectively as Decision Tree or SVM but still performs reasonably well, possibly due to a well-tuned penalty parameter of 0.000339 that helps in managing overfitting.
+
+\textbf{k-Nearest Neighbors (k-NN)} has an accuracy of 0.844. This model's performance is slightly lower, which might be due to its dependency on the local neighborhood, which can affect its ability to generalize well on unseen data.  Additionally, k-NN is sensitive to the distance metric used; disparities in feature scales or the inclusion of irrelevant features can distort the perceived similarities between instances which can leads to inaccurate predictions.
+
+\textbf{Neural Network} has the lowest accuracy of 0.837. Neural networks' performance is highly contingent upon effective hyperparameter tuning, including the number of hidden units, learning rate, epochs, batch size, and the incorporation of various layers like dropout for regularization. Despite diligent tuning and the choice of using the best hyperparameters, including six hidden units, this might not still be optimal for the model. Neural networks depend heavily on a wide range of hyperparameters, such as learning rate, epochs, batch size, and dropout. However, the only parameter used for training this model was the number of hidden units. This approach might be too simplistic for the dataset, or there could be issues related to the non-tuning of other critical hyperparameters.
+
+In summary, \textbf{Decision Tree} and \textbf{SVM} show the best out-of-sample performance, closely followed by \textbf{Logistic Regression} and \textbf{k-NN}. The \textbf{Neural Network} lags slightly behind in this particular case. The differences in performance can often be attributed to how each algorithm handles the underlying data structure and complexity, as well as how well their hyperparameters are tuned to prevent overfitting while maintaining good generalization on unseen data.
+
+\section*{General Considerations}
+The inherent characteristics of dataset (such as non-linear separability, noise, and class overlap) can limit the effectiveness of certain models. Both k-NN and NN might struggle if the data doesn't suit their strengths.
+
+And regarding evaluation metric: While accuracy is a straightforward metric, it might not fully capture the model's performance, especially in imbalanced datasets. Other metrics like precision, recall, F1-score, or ROC-AUC might provide more insights into where the models are lacking. Given these factors, even well-tuned models using k-NN and neural networks might not always achieve the highest accuracy compared to models like decision trees or SVMs, which might be better suited to the specific characteristics of the dataset or are more robust to certain types of data irregularities. It would be good to explore other metrics depending on the datasets and its interpretation and compare.
+
+\end{document}
